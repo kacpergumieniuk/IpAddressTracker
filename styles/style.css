@@ -45,7 +45,8 @@ body {
   position: relative;
   background-color: white;
   border-radius: 14px;
-  min-width: 500px;
+  width: 40%;
+  max-width: 700px;
   border: none;
 }
 
@@ -57,10 +58,15 @@ body {
   outline: none;
   font-size: 18px;
   font-family: 'Rubik', sans-serif;
-  cursor: pointer;
+  width: 60%;
 }
 
-.container .upper .input .button {
+.container .upper .input input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  box-shadow: 0 0 0px 1000px #ffffff inset;
+}
+
+.container .upper .input #button {
   position: absolute;
   height: 48px;
   top: 0%;
@@ -84,7 +90,7 @@ body {
           align-items: center;
 }
 
-.container .upper .input .button:hover {
+.container .upper .input #button:hover {
   background-color: #454545;
 }
 
@@ -115,6 +121,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: relative;
 }
 
 .container .upper .stats .stats-container .label {
@@ -136,17 +143,79 @@ body {
 
 .container .upper .stats .stats-container #isp {
   margin-right: 30px;
-  margin-left: 0;
 }
 
 .container .upper .stats .stats-container #isp-label {
   margin-right: 30px;
-  margin-left: 0;
+}
+
+.container .upper .stats .stats-container::after {
+  content: '';
+  width: 1px;
+  height: 60px;
+  background: #d6d6d6;
+  position: absolute;
+  right: -1px;
+  bottom: 35px;
 }
 
 .container #map {
   height: 63%;
   background-color: bisque;
   z-index: 2;
+}
+
+@media (max-width: 1100px) {
+  .container .upper .input {
+    width: 85%;
+  }
+  .container .upper .stats .stats-container .stat {
+    font-size: 14px;
+  }
+  .container .upper .stats .stats-container .label {
+    font-size: 8px;
+  }
+  .container .upper .stats .stats-container::after {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .container .upper .stats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 85%;
+    height: 250px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    bottom: -125px;
+    padding: 20px 0;
+  }
+  .container .upper .stats .stats-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .container .upper .stats .stats-container .label {
+    margin: 0 0 3px 0;
+    padding: 0;
+    font-size: 10px;
+  }
+  .container .upper .stats .stats-container .stat {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
+  .container .upper .stats .stats-container #isp {
+    margin: 0;
+  }
+  .container .upper .stats .stats-container #isp-label {
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
