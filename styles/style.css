@@ -149,7 +149,11 @@ body {
   margin-right: 30px;
 }
 
-.container .upper .stats .stats-container::after {
+.container .upper .stats .bordered {
+  position: relative;
+}
+
+.container .upper .stats .bordered::after {
   content: '';
   width: 1px;
   height: 60px;

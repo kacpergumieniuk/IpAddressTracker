@@ -123,7 +123,10 @@ body {
           margin-right: 30px;
         }
       }
-      .stats-container::after {
+      .bordered {
+        position: relative;
+      }
+      .bordered::after {
         content: '';
         width: 1px;
         height: 60px;
